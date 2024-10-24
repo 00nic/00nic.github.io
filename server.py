@@ -16,5 +16,13 @@ app.config['SECRET_KEY']= '4848'
 
 mysql = MySQL(app)
 
+@app.route('/index')
+def index():
+    cur= mysql.connection.cursor()
+    cur.execute('SELECT * FROM proyectos')
+    proyectos= cur.fetchall()
+    cur.close()
+    return render_template('index.html', proyectos = proyectos)
+
 if __name__ == '__main__':
     app.run(debug= True, port= 5000)
