@@ -24,7 +24,7 @@
             <div class="modal-proyecto" id="modal-proyecto" style="display: block;">
                 <div class="modal-contenido-proyecto">
                     <button class="boton-volver" onclick="window.location.href='/portfolio'" ><i class="fa-solid fa-xmark"></i></button>
-                        <img src="static/img/{{proyecto['imagen']}}" alt="{{proyecto['nombre']}}">
+                        <img class='imagen' src="{{ url_for('static', filename='img/' + proyecto['imagen']) }}" alt="{{proyecto['nombre']}}">
                         <h1>{{proyecto['nombre']}}</h1>
                         <h2>{{proyecto['descripcion']}}</h2>
                         <h3>Fecha inicio: {{proyecto['fecha_inicio']}}</h3>
