@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Nicolás Gonzalez</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sobreMi.css') }}">
+</head>
+<body>
+    <div class="sobre-mi">
+        <header>
+            <h4><a href="/portfolio">Volver</a></h4>
+        </header>
+        <h1>Sobre mí</h1>
+        <img src="{{ url_for('static', filename='img/foto-mia-portfolio.jpg') }}">
+        <p>Nicolás Gonzalez, un apasionado desarrollador web con experiencia en varias tecnologías. Me gusta crear soluciones eficientes combinando diseño y funcionalidad.</p>
+        
+        <h2>Formación</h2>
+        <p>Me encuentro completando el segundo año de la Tecnicatura en Desarrollo de Software, donde estoy adquiriendo habilidades clave en programación y desarrollo de aplicaciones enfocado en metodologías ágiles.</p>
+
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Desarrollo Backend: Python, Flask</li>
+            <li>Desarrollo Frontend: HTML, CSS, JavaScript</li>
+            <li>Bases de Datos: MySQL</li>
+            <li>Control de versiones: Git</li>
+        </ul>
+
+        <h2>Contacto</h2>
+        <p>Puedes contactarme a través de mi correo: <a href="mailto:nicoenzogon@gmail.com">nicoenzogon@gmail.com</a></p>
+    </div>
+</body>
+</html>

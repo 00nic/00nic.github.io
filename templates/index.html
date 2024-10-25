@@ -4,43 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Gonzalez portfolio</title>
-    <link rel="stylesheet" href="static/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="proyectos">
-        {% for proyecto in proyectos %}
-            <div class="proyecto" onclick="window.location.href='/portfolio/{{proyecto.id}}'">
-                <img src="static/img/{{proyecto['imagen']}}" alt="{{proyecto['nombre']}}">
-                <h1>{{proyecto['nombre']}}</h1>
-                <h2>{{proyecto['descripcion']}}</h2>
-                <h3>Fecha inicio: {{proyecto['fecha_inicion']}}</h3>
-                <h3>Fecha finalización: {{proyecto['fecha_finalizacion']}}</h3>
-                <h3>Repositorio del proyecto: {{proyecto[]}}</h3>
-                <h3>Tecnologías utilizadas</h3>
-                <h2>Lenguajes de programación:</h2>
-                <ul>
-                    <li>Python</li>
-                    <li>Javascript</li>
-                </ul>
-                <h2>Marcado y estilo:</h2>
-                <ul>
-                    <li>CSS</li>
-                    <li>HTML</li>
-                </ul>
-                <h2>Framework:</h2>
-                <ul>
-                    <li>Flask</li>
-                </ul>
-                <h2>Base de datos:</h2>
-                <ul>
-                    <li>MySQL</li>
-                </ul>
-                <h2>Adicional:</h2>
-                <ul>
-                    <li>Git</li>
-                </ul>
+    <header>
+        <h4><i class="fa-regular fa-user"></i><a href="/sobreMi">Sobre mí</a></h4>
+    </header>
+    <div class="main">
+        <div class="proyectos">
+            {% for proyecto in proyectos %}
+                <div class="proyecto" onclick="window.location.href='/portfolio/{{proyecto.id_proyecto}}'">
+                    <img src="static/img/{{proyecto['imagen']}}" alt="{{proyecto['nombre']}}">
+                    <h1>{{proyecto['nombre']}}</h1>
+                </div>
+            {% endfor %}
+        </div>
+        {% if proyecto %}
+            <div class="modal-proyecto" id="modal-proyecto" style="display: block;">
+                <div class="modal-contenido-proyecto">
+                    <button class="boton-volver" onclick="window.location.href='/portfolio'" ><i class="fa-solid fa-xmark"></i></button>
+                        <img src="static/img/{{proyecto['imagen']}}" alt="{{proyecto['nombre']}}">
+                        <h1>{{proyecto['nombre']}}</h1>
+                        <h2>{{proyecto['descripcion']}}</h2>
+                        <h3>Fecha inicio: {{proyecto['fecha_inicio']}}</h3>
+                        <h3>Fecha finalización: {{proyecto['fecha_finalizacion']}}</h3>
+                        <h3>Repositorio del proyecto: <a href="{{ proyecto['enlace'] }}" target="_blank">Ir al repositorio</a></h3>
+                        <h2>Tecnologías utilizadas</h2>
+                        <h3>Lenguajes de programación:</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Javascript</li>
+                        </ul>
+                        <h3>Marcado y estilo:</h3>
+                        <ul>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                        </ul>
+                        <h3>Framework:</h3>
+                        <ul>
+                            <li>Flask</li>
+                        </ul>
+                        <h3>Base de datos:</h3>
+                        <ul>
+                            <li>MySQL</li>
+                        </ul>
+                        <h3>Adicional:</h3>
+                        <ul>
+                            <li>Git</li>
+                        </ul>
+                </div>
             </div>
-        {% endfor %}
+        {% endif %}
     </div>
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
 </body>
 </html>
