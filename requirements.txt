@@ -1,4 +1,4 @@
 Flask
-flask-mysqldb
+Flask-SQLAlchemy
 python-dotenv
 PyMySQL
