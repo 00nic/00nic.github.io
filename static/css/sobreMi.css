@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff3ad ;
+    font-size: large;
+    background-color: #294620;
+}
+
+
+a{
+    text-decoration: None;
+    color: #fff3ad;
+}
+
+h1, h2, h3 {
+    color: #192916;;
+}
+
+.sobre-mi {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #4f7543;
+    border: 3px solid #81a376;
+    border-radius: 5px;
+}
+
+.sobre-mi h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sobre-mi ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sobre-mi a:hover {
+    text-decoration: underline;
+}
+
+.sobre-mi img{
+    max-width: 150px;
+    max-height: 150px;
+    border: 1px solid #81a376;
+    border-radius: 5px;
+}
