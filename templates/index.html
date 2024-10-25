@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nicolás Gonzalez portfolio</title>
+    <link rel="stylesheet" href="static/index.css">
 </head>
 <body>
-    <form>
-        <input type="text" placeholder="hola nico">
-    </form>
+    <div class="proyectos">
+        {% for proyecto in proyectos %}
+            <div class="proyecto" onclick="window.location.href='/portfolio/{{proyecto.id}}'">
+                <img src="static/img/{{proyecto['imagen']}}" alt="{{proyecto['nombre']}}">
+                <h1>{{proyecto['nombre']}}</h1>
+                <h2>{{proyecto['descripcion']}}</h2>
+                <h3>Fecha inicio: {{proyecto['fecha_inicion']}}</h3>
+                <h3>Fecha finalización: {{proyecto['fecha_finalizacion']}}</h3>
+                <h3>Repositorio del proyecto: {{proyecto[]}}</h3>
+                <h3>Tecnologías utilizadas</h3>
+                <h2>Lenguajes de programación:</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>Javascript</li>
+                </ul>
+                <h2>Marcado y estilo:</h2>
+                <ul>
+                    <li>CSS</li>
+                    <li>HTML</li>
+                </ul>
+                <h2>Framework:</h2>
+                <ul>
+                    <li>Flask</li>
+                </ul>
+                <h2>Base de datos:</h2>
+                <ul>
+                    <li>MySQL</li>
+                </ul>
+                <h2>Adicional:</h2>
+                <ul>
+                    <li>Git</li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>
